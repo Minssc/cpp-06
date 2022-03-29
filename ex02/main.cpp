@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 23:48:17 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/30 00:04:10 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/30 00:09:20 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,8 @@ int	main()
 		identify(*b);
 		delete b;
 	}
+
+	identify(NULL);
+
 	return (0);
 }
