@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:16:08 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 23:12:32 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/30 13:14:52 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,34 @@ static void	printas_int(double raw)
 static void	printas_float(double raw)
 {
 	std::cout << "float: ";
-	std::cout << std::fixed << static_cast<float>(raw);
+	if ((std::ceil(raw) - std::floor(raw) == 0.0))
+	{
+		std::cout << std::fixed;
+		std::cout.precision(1);
+	}
+	else
+	{
+		std::cout.unsetf(std::ios_base::floatfield);
+		std::cout.precision(6);
+	}
+	std::cout << static_cast<float>(raw);
 	std::cout << 'f' << std::endl;
 }
 
 static void	printas_double(double raw)
 {
 	std::cout << "double: ";
-	std::cout << std::fixed << raw;
+	if ((std::ceil(raw) - std::floor(raw) == 0.0))
+	{
+		std::cout << std::fixed;
+		std::cout.precision(1);
+	}
+	else
+	{
+		std::cout.unsetf(std::ios_base::floatfield);
+		std::cout.precision(6);
+	}
+	std::cout << raw;
 	std::cout << std::endl;
 }
 
@@ -66,7 +86,6 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 
-	std::cout.precision(1);
 	double	draw;
 	char	*cp;
 	draw = std::strtod(argv[1], &cp);

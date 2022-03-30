@@ -6,7 +6,7 @@
 #    By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 13:09:39 by minsunki          #+#    #+#              #
-#    Updated: 2022/03/29 23:12:23 by minsunki         ###   ########seoul.kr   #
+#    Updated: 2022/03/30 13:16:03 by minsunki         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ SRCS_M			=		$(addsuffix .cpp, $(FIL_M))
 
 OBJS_M			=		$(SRCS_M:.cpp=.o)
 
-CC				=		clang++
+CC				=		c++
 WFLAG			=		-Wall -Wextra -Werror
-CPPFLAG			=		-std=c++98 -pedantic
+CPPFLAG			=		-std=c++98
 RM				=		rm -f
 
 %.o				:		%.cpp
