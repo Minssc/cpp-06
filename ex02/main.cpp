@@ -60,19 +60,19 @@ void	identify(Base& p)
 	id = 0;
 	try
 	{
-		dynamic_cast<A&>(p);
+		static_cast<void>(dynamic_cast<A&>(p));
 		id = 1;
 	}
 	catch (std::exception &e) {(void)e;}
 	try
 	{
-		dynamic_cast<B&>(p);
+		static_cast<void>(dynamic_cast<B&>(p));
 		id = 2;
 	}
 	catch (std::exception &e) {(void)e;}
 	try
 	{
-		dynamic_cast<C&>(p);
+		static_cast<void>(dynamic_cast<C&>(p));
 		id = 3;
 	}
 	catch (std::exception &e) {(void)e;}
